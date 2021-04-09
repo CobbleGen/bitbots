@@ -1,0 +1,210 @@
+* {
+    font-family: 'Teko';
+    padding: 0;
+    margin: 0;
+} 
+
+$site-purple: rgb(104, 1, 104);
+
+h3, h4, h5, label {color: white;}
+h1, h2 {color: $site-purple;}
+h1 {font-size: 3rem;}
+h2 {font-size: 2.5rem;}
+h3 {font-size: 2rem;}
+h4 {font-size: 1.5rem;}
+h5 {font-size: 1rem;}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(14, 14, 14);
+}
+
+.container {
+    width: 70%;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-link {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-weight: bold;
+        color: $site-purple;
+
+    }
+}
+
+#header {
+    text-align: center;
+}
+
+#bot-array {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#bot-page {
+    display: flex;
+    justify-content: space-between;
+    #parts-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 80%;
+    }
+    .info-part {
+        display: flex;
+        margin-right: 15px;
+        .img-div {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        img {
+            margin-right: 10px;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .rarity-Common{color: gray;}
+        .rarity-Uncommon{color: green;}
+        .rarity-Rare{color: blue;}
+    }
+
+    
+
+}
+
+.bot-info {
+    display: flex;
+    align-items: center;
+
+    &.reverse {
+        flex-direction: row-reverse;
+    }
+}
+.bot-parts {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border: 3px solid gray;
+    border-radius: 5px;
+    margin: 5px;
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    &.rarity-Common{border-color: gray;}
+    &.rarity-Uncommon{border-color: green;}
+    &.rarity-Rare{border-color: blue;}
+}
+
+
+.bitbot {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.bot-img {
+    width: 250px;
+}
+
+.button {
+    background-color: $site-purple;;
+    padding: 5px;
+    border-radius: 5px;
+        &:hover {
+            cursor: pointer;
+            background-color: rebeccapurple;
+        }
+    h3 {
+        color: black;
+    }
+}
+
+#mint-page {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#select-box {
+    width: 100%;
+    display: flex;
+
+    
+}
+
+#bot-result {
+    width: 50%;
+    margin: 20px;
+
+    select {
+        width: 100px;
+    }
+}
+
+.bot-select {
+    width: 100%;
+
+    .part {
+        transition: border-color 0.3s ease;
+        &:hover {
+            cursor: pointer;
+            border-color: green;
+        }
+        &.selected {
+            border-color: green;
+        }
+        &.not-selected {
+            border-color: red;
+        }
+    }
+}
+
+#preview-box {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+
+    .pre-box {
+        display: flex;
+        justify-content: center;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        div {
+            margin-left: 10px;
+            margin-bottom: 10px; 
+            height: 150px;
+        }
+        &#top-box {
+            div {
+                height: 75px;
+            }
+        }
+    }
+}

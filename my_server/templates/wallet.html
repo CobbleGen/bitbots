@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block headline %}
+    {% block title %}{{address}}'s BitBots!{% endblock %}
+{% endblock %}
+
+{% block content %}
+    <div id="bot-array" data-type="wallet" data-id="{{address}}">
+    </div>
+{% endblock %}
