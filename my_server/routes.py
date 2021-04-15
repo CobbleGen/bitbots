@@ -24,8 +24,11 @@ def combine():
 def botinfo(bot_id = None):
     if bot_id == None:
         abort(404)
-    bot = dbhandler.get_bot(bot_id).serialize
-    return render_template('botinfo.html', bot=bot)
+    bot = dbhandler.get_bot(bot_id)
+    history_tree = None
+    if len(bot.made_from) > 0:
+        history_tree = bot.made_from[0].serialize()
+    return render_template('botinfo.html', bot=bot.serialize, history_tree=history_tree)
 
 @app.route('/bot/<bot_id>')
 def bot(bot_id = None):

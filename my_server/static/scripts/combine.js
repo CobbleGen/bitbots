@@ -42,27 +42,6 @@ async function updateCombine() {
         contract.methods.combineBots(bot1, bot2, parts).send({ from: accounts[0]}).then(
             function(res) {
                 const bot = res.events.NewBot.returnValues;
-                $.ajax({
-                  type: "POST",
-                  url: "/_new_bot",
-                  data: {
-                    id:    bot._id,
-                    level: bot.level,
-                    head:  bot.head,
-                    body:  bot.body,
-                    r_arm: bot.r_arm,
-                    l_arm: bot.l_arm,
-                    r_leg: bot.r_leg,
-                    l_leg: bot.l_leg
-                  },
-                  dataType: "JSON",
-                  success: function (response) {
-                    console.log(response);
-                  },
-                  error: function(err) {
-                    console.log(err);
-                  }
-                });
               }
           );  
     });

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block headline %}
+    
 {% endblock %}
 {% block title %}Bitbots!{% endblock %}
 
@@ -108,5 +109,29 @@
             </div>
         </div>
     </div>
+</div>
+<div id="history-tree">
+    {% macro branch(bot)%}
+        <div class="branch">
+            <img src="{{url_for('static', filename='bots-images/'+ bot.owner|string + '.png')}}" alt="">
+            <div class="branch-children">
+                {% if bot.from1 is not none %}
+                    {{ branch(bot.from1)}}
+                {% else %}
+                    <img src="{{url_for('static', filename='bots-images/'+ bot.mf_1|string + '.png')}}" alt="">
+                {% endif %}
+
+                {% if bot.from2 is not none %}
+                    {{ branch(bot.from2)}}
+                {% else %}
+                    <img src="{{url_for('static', filename='bots-images/'+ bot.mf_2|string + '.png')}}" alt="">
+                {% endif %}
+            </div>
+        </div>
+    {% endmacro %}
+
+    {% if history_tree is not none %}
+        {{ branch(history_tree) }}
+    {% endif %}
 </div>
 {% endblock %}

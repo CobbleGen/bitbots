@@ -81,10 +81,25 @@ body {
         .rarity-Common{color: gray;}
         .rarity-Uncommon{color: green;}
         .rarity-Rare{color: blue;}
+        .rarity-Epic{color: rgb(202, 25, 202);}
     }
+}
 
-    
-
+#history-tree {
+    img {
+        width: 150px;
+        height: 250px;
+    }
+    .branch {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    .branch-children {
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .bot-info {
@@ -207,4 +222,9 @@ body {
             }
         }
     }
+}
+
+connection {
+    border: 5px solid #ffffff;
+    border-radius: 10px;
 }
