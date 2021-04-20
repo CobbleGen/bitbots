@@ -185,12 +185,16 @@ def resetDB():
         Category(id=10, name="XR-II",       creator="TR",           rarity="Rare"),
         Category(id=11, name="Golem",       creator="TR",           rarity="Rare"),
         Category(id=12, name="DemonBot",    creator="Sander",       rarity="Rare"),
-        Category(id=13, name="XR-V",        creator="TR",           rarity="Epic"),
-        Category(id=14, name="Unit",        creator="ArtTribe",     rarity="Epic"),
-        Category(id=15, name="Anubit",      creator="TR",           rarity="Epic"),
-        Category(id=16, name="PunkBot",     creator="Chabusan",     rarity="Epic"),
-        Category(id=17, name="GodBot",      creator="Chabusan",     rarity="Legendary"),
-        Category(id=18, name="Junkyard King",creator="Roman Ichalov",rarity="Legendary"),
+        Category(id=13, name="XR-800",      creator="TR",           rarity="Rare"),
+        Category(id=14, name="XR-V",        creator="TR",           rarity="Epic"),
+        Category(id=15, name="Unit",        creator="ArtTribe",     rarity="Epic"),
+        Category(id=16, name="Anubit",      creator="TR",           rarity="Epic"),
+        Category(id=17, name="PunkBot",     creator="Chabusan",     rarity="Epic"),
+        Category(id=18, name="GodBot",      creator="Chabusan",     rarity="Legendary"),
+        Category(id=19, name="Junkyard King",creator="Roman Ichalov",rarity="Legendary"),
+        Category(id=20, name="AlienBot",    creator="Chabusan",     rarity="Legendary"),
+        Category(id=21, name="Scubabot",    creator="AyshaArt",     rarity="Legendary"),
+        Category(id=22, name="BugBot",      creator="ArtTribe",     rarity="Legendary"),
 
         Bit(part=0, category_id=0, name="AyshaBot Head",    coordinate="[400,530]", image_file="bit-images/aysha/head.png"),
         Bit(part=1, category_id=0, name="AyshaBot Body",    coordinate="[[360,51],[65,315],[700,315],[190,1290],[575,1290], True]", image_file="bit-images/aysha/body.png"),
@@ -283,47 +287,75 @@ def resetDB():
         Bit(part=4, category_id=12, name="DemonBot Left Leg",coordinate="[330,90]", image_file="bit-images/sander2/l_leg.png"),
         Bit(part=5, category_id=12, name="DemonBot Right Leg",coordinate="[120,90]", image_file="bit-images/sander2/r_leg.png"),
 
-        Bit(part=0, category_id=13, name="XR-V Head",    coordinate="[350,620]", image_file="bit-images/xr5/head.png"),
-        Bit(part=1, category_id=13, name="XR-V Body",    coordinate="[[500,80],[95,350],[910,350],[330,1150],[670,1150], True]", image_file="bit-images/xr5/body.png"),
-        Bit(part=2, category_id=13, name="XR-V Left Arm",coordinate="[500,560]", image_file="bit-images/xr5/l_arm.png"),
-        Bit(part=3, category_id=13, name="XR-V Right Arm",coordinate="[200,570]", image_file="bit-images/xr5/r_arm.png"),
-        Bit(part=4, category_id=13, name="XR-V Left Leg",coordinate="[590,80]", image_file="bit-images/xr5/l_leg.png"),
-        Bit(part=5, category_id=13, name="XR-V Right Leg",coordinate="[230,100]", image_file="bit-images/xr5/r_leg.png"),
+        Bit(part=0, category_id=13, name="XR-800 Head",    coordinate="[350,550]", image_file="bit-images/xr800/head.png"),
+        Bit(part=1, category_id=13, name="XR-800 Body",    coordinate="[[480,30],[90,190],[870,210],[270,1140],[700,1140], False]", image_file="bit-images/xr800/body.png"),
+        Bit(part=2, category_id=13, name="XR-800 Left Arm",coordinate="[490,305]", image_file="bit-images/xr800/l_arm.png"),
+        Bit(part=3, category_id=13, name="XR-800 Right Arm",coordinate="[205,310]", image_file="bit-images/xr800/r_arm.png"),
+        Bit(part=4, category_id=13, name="XR-800 Left Leg",coordinate="[550,75]", image_file="bit-images/xr800/l_leg.png"),
+        Bit(part=5, category_id=13, name="XR-800 Right Leg",coordinate="[400,75]", image_file="bit-images/xr800/r_leg.png"),
 
-        Bit(part=0, category_id=14, name="Unit Head",    coordinate="[520,550]", image_file="bit-images/tribe2/head.png"),
-        Bit(part=1, category_id=14, name="Unit Body",    coordinate="[[800,30],[176,385],[1436,380],[592,1080],[1040,1080], True]", image_file="bit-images/tribe2/body.png"),
-        Bit(part=2, category_id=14, name="Unit Left Arm",coordinate="[320,190]", image_file="bit-images/tribe2/l_arm.png"),
-        Bit(part=3, category_id=14, name="Unit Right Arm",coordinate="[115,190]", image_file="bit-images/tribe2/r_arm.png"),
-        Bit(part=4, category_id=14, name="Unit Left Leg",coordinate="[235,115]", image_file="bit-images/tribe2/l_leg.png"),
-        Bit(part=5, category_id=14, name="Unit Right Leg",coordinate="[220,115]", image_file="bit-images/tribe2/r_leg.png"),
+        Bit(part=0, category_id=14, name="XR-V Head",    coordinate="[350,620]", image_file="bit-images/xr5/head.png"),
+        Bit(part=1, category_id=14, name="XR-V Body",    coordinate="[[500,80],[95,350],[910,350],[330,1150],[670,1150], True]", image_file="bit-images/xr5/body.png"),
+        Bit(part=2, category_id=14, name="XR-V Left Arm",coordinate="[500,560]", image_file="bit-images/xr5/l_arm.png"),
+        Bit(part=3, category_id=14, name="XR-V Right Arm",coordinate="[200,570]", image_file="bit-images/xr5/r_arm.png"),
+        Bit(part=4, category_id=14, name="XR-V Left Leg",coordinate="[590,80]", image_file="bit-images/xr5/l_leg.png"),
+        Bit(part=5, category_id=14, name="XR-V Right Leg",coordinate="[230,100]", image_file="bit-images/xr5/r_leg.png"),
 
-        Bit(part=0, category_id=15, name="Anubit Head",    coordinate="[350,620]", image_file="bit-images/xr6/head.png"),
-        Bit(part=1, category_id=15, name="Anubit Body",    coordinate="[[500,80],[90,240],[910,240],[330,1150],[670,1150], True]", image_file="bit-images/xr6/body.png"),
-        Bit(part=2, category_id=15, name="Anubit Left Arm",coordinate="[500,380]", image_file="bit-images/xr6/l_arm.png"),
-        Bit(part=3, category_id=15, name="Anubit Right Arm",coordinate="[240,380]", image_file="bit-images/xr6/r_arm.png"),
-        Bit(part=4, category_id=15, name="Anubit Left Leg",coordinate="[640,100]", image_file="bit-images/xr6/l_leg.png"),
-        Bit(part=5, category_id=15, name="Anubit Right Leg",coordinate="[230,100]", image_file="bit-images/xr6/r_leg.png"),
+        Bit(part=0, category_id=15, name="Unit Head",    coordinate="[520,550]", image_file="bit-images/tribe2/head.png"),
+        Bit(part=1, category_id=15, name="Unit Body",    coordinate="[[800,30],[176,385],[1436,380],[592,1080],[1040,1080], True]", image_file="bit-images/tribe2/body.png"),
+        Bit(part=2, category_id=15, name="Unit Left Arm",coordinate="[320,190]", image_file="bit-images/tribe2/l_arm.png"),
+        Bit(part=3, category_id=15, name="Unit Right Arm",coordinate="[115,190]", image_file="bit-images/tribe2/r_arm.png"),
+        Bit(part=4, category_id=15, name="Unit Left Leg",coordinate="[235,115]", image_file="bit-images/tribe2/l_leg.png"),
+        Bit(part=5, category_id=15, name="Unit Right Leg",coordinate="[220,115]", image_file="bit-images/tribe2/r_leg.png"),
 
-        Bit(part=0, category_id=16, name="Punkbot Head",    coordinate="[165,480]", image_file="bit-images/punkbot/head.png"),
-        Bit(part=1, category_id=16, name="Punkbot Body",    coordinate="[[445,130],[80,350],[800,350],[220,1180],[600,1190], False]", image_file="bit-images/punkbot/body.png"),
-        Bit(part=2, category_id=16, name="Punkbot Left Arm",coordinate="[380,150]", image_file="bit-images/punkbot/l_arm.png"),
-        Bit(part=3, category_id=16, name="Punkbot Right Arm",coordinate="[100,160]", image_file="bit-images/punkbot/r_arm.png"),
-        Bit(part=4, category_id=16, name="Punkbot Left Leg",coordinate="[315,110]", image_file="bit-images/punkbot/l_leg.png"),
-        Bit(part=5, category_id=16, name="Punkbot Right Leg",coordinate="[170,110]", image_file="bit-images/punkbot/r_leg.png"),
+        Bit(part=0, category_id=16, name="Anubit Head",    coordinate="[350,620]", image_file="bit-images/xr6/head.png"),
+        Bit(part=1, category_id=16, name="Anubit Body",    coordinate="[[500,80],[90,240],[910,240],[330,1150],[670,1150], True]", image_file="bit-images/xr6/body.png"),
+        Bit(part=2, category_id=16, name="Anubit Left Arm",coordinate="[500,380]", image_file="bit-images/xr6/l_arm.png"),
+        Bit(part=3, category_id=16, name="Anubit Right Arm",coordinate="[240,380]", image_file="bit-images/xr6/r_arm.png"),
+        Bit(part=4, category_id=16, name="Anubit Left Leg",coordinate="[640,100]", image_file="bit-images/xr6/l_leg.png"),
+        Bit(part=5, category_id=16, name="Anubit Right Leg",coordinate="[230,100]", image_file="bit-images/xr6/r_leg.png"),
 
-        Bit(part=0, category_id=17, name="Godbot Head",    coordinate="[200,440]", image_file="bit-images/godbot/head.png"),
-        Bit(part=1, category_id=17, name="Godbot Body",    coordinate="[[710,80],[230,450],[1180,450],[520,1130],[820,1130], False]", image_file="bit-images/godbot/body.png"),
-        Bit(part=2, category_id=17, name="Godbot Left Arm",coordinate="[480,150]", image_file="bit-images/godbot/l_arm.png"),
-        Bit(part=3, category_id=17, name="Godbot Right Arm",coordinate="[50,70]", image_file="bit-images/godbot/r_arm.png"),
-        Bit(part=4, category_id=17, name="Godbot Left Leg",coordinate="[270,50]", image_file="bit-images/godbot/l_leg.png"),
-        Bit(part=5, category_id=17, name="Godbot Right Leg",coordinate="[140,60]", image_file="bit-images/godbot/r_leg.png"),
+        Bit(part=0, category_id=17, name="Punkbot Head",    coordinate="[165,480]", image_file="bit-images/punkbot/head.png"),
+        Bit(part=1, category_id=17, name="Punkbot Body",    coordinate="[[445,130],[80,350],[800,350],[220,1180],[600,1190], False]", image_file="bit-images/punkbot/body.png"),
+        Bit(part=2, category_id=17, name="Punkbot Left Arm",coordinate="[380,150]", image_file="bit-images/punkbot/l_arm.png"),
+        Bit(part=3, category_id=17, name="Punkbot Right Arm",coordinate="[100,160]", image_file="bit-images/punkbot/r_arm.png"),
+        Bit(part=4, category_id=17, name="Punkbot Left Leg",coordinate="[315,110]", image_file="bit-images/punkbot/l_leg.png"),
+        Bit(part=5, category_id=17, name="Punkbot Right Leg",coordinate="[170,110]", image_file="bit-images/punkbot/r_leg.png"),
 
-        Bit(part=0, category_id=18, name="Kings Head",    coordinate="[200,480]", image_file="bit-images/king/head.png"),
-        Bit(part=1, category_id=18, name="Kings Body",    coordinate="[[540,230],[170,470],[930,470],[410,1125],[660,1125], True]", image_file="bit-images/king/body.png"),
-        Bit(part=2, category_id=18, name="Kings Left Arm",coordinate="[230,275]", image_file="bit-images/king/l_arm.png"),
-        Bit(part=3, category_id=18, name="Kings Right Arm",coordinate="[140,250]", image_file="bit-images/king/r_arm.png"),
-        Bit(part=4, category_id=18, name="Kings Left Leg",coordinate="[250,90]", image_file="bit-images/king/l_leg.png"),
-        Bit(part=5, category_id=18, name="Kings Right Leg",coordinate="[75,95]", image_file="bit-images/king/r_leg.png"),
+        Bit(part=0, category_id=18, name="Godbot Head",    coordinate="[200,440]", image_file="bit-images/godbot/head.png"),
+        Bit(part=1, category_id=18, name="Godbot Body",    coordinate="[[710,80],[230,450],[1180,450],[520,1130],[820,1130], False]", image_file="bit-images/godbot/body.png"),
+        Bit(part=2, category_id=18, name="Godbot Left Arm",coordinate="[480,150]", image_file="bit-images/godbot/l_arm.png"),
+        Bit(part=3, category_id=18, name="Godbot Right Arm",coordinate="[50,70]", image_file="bit-images/godbot/r_arm.png"),
+        Bit(part=4, category_id=18, name="Godbot Left Leg",coordinate="[270,50]", image_file="bit-images/godbot/l_leg.png"),
+        Bit(part=5, category_id=18, name="Godbot Right Leg",coordinate="[140,60]", image_file="bit-images/godbot/r_leg.png"),
+
+        Bit(part=0, category_id=19, name="Kings Head",    coordinate="[200,480]", image_file="bit-images/king/head.png"),
+        Bit(part=1, category_id=19, name="Kings Body",    coordinate="[[540,230],[170,470],[930,470],[410,1125],[660,1125], True]", image_file="bit-images/king/body.png"),
+        Bit(part=2, category_id=19, name="Kings Left Arm",coordinate="[230,275]", image_file="bit-images/king/l_arm.png"),
+        Bit(part=3, category_id=19, name="Kings Right Arm",coordinate="[140,250]", image_file="bit-images/king/r_arm.png"),
+        Bit(part=4, category_id=19, name="Kings Left Leg",coordinate="[250,90]", image_file="bit-images/king/l_leg.png"),
+        Bit(part=5, category_id=19, name="Kings Right Leg",coordinate="[75,95]", image_file="bit-images/king/r_leg.png"),
+
+        Bit(part=0, category_id=20, name="Alienbot Head",    coordinate="[500,560]", image_file="bit-images/alienbot/head.png"),
+        Bit(part=1, category_id=20, name="Alienbot Body",    coordinate="[[560,20],[190,285],[940,285],[420,1040],[660,1040], True]", image_file="bit-images/alienbot/body.png"),
+        Bit(part=2, category_id=20, name="Alienbot Left Arm",coordinate="[420,120]", image_file="bit-images/alienbot/l_arm.png"),
+        Bit(part=3, category_id=20, name="Alienbot Right Arm",coordinate="[110,210]", image_file="bit-images/alienbot/r_arm.png"),
+        Bit(part=4, category_id=20, name="Alienbot Left Leg",coordinate="[230,130]", image_file="bit-images/alienbot/l_leg.png"),
+        Bit(part=5, category_id=20, name="Alienbot Right Leg",coordinate="[60,220]", image_file="bit-images/alienbot/r_leg.png"),
+
+        Bit(part=0, category_id=21, name="Scubabot Head",    coordinate="[320,550]", image_file="bit-images/aysha3/head.png"),
+        Bit(part=1, category_id=21, name="Scubabot Body",    coordinate="[[625,190],[162,435],[1100,435],[475,1090],[785,1090], True]", image_file="bit-images/aysha3/body.png"),
+        Bit(part=2, category_id=21, name="Scubabot Left Arm",coordinate="[390,90]", image_file="bit-images/aysha3/l_arm.png"),
+        Bit(part=3, category_id=21, name="Scubabot Right Arm",coordinate="[150,90]", image_file="bit-images/aysha3/r_arm.png"),
+        Bit(part=4, category_id=21, name="Scubabot Left Leg",coordinate="[350,140]", image_file="bit-images/aysha3/l_leg.png"),
+        Bit(part=5, category_id=21, name="Scubabot Right Leg",coordinate="[210,150]", image_file="bit-images/aysha3/r_leg.png"),
+
+        Bit(part=0, category_id=22, name="BugBot Head",    coordinate="[490,610]", image_file="bit-images/artribe3/head.png"),
+        Bit(part=1, category_id=22, name="BugBot Body",    coordinate="[[950,120],[350,530],[1500,530],[730,1420],[1160,1420], True]", image_file="bit-images/artribe3/body.png"),
+        Bit(part=2, category_id=22, name="BugBot Left Arm",coordinate="[290,160]", image_file="bit-images/artribe3/l_arm.png"),
+        Bit(part=3, category_id=22, name="BugBot Right Arm",coordinate="[180,170]", image_file="bit-images/artribe3/r_arm.png"),
+        Bit(part=4, category_id=22, name="BugBot Left Leg",coordinate="[400,130]", image_file="bit-images/artribe3/l_leg.png"),
+        Bit(part=5, category_id=22, name="BugBot Right Leg",coordinate="[230,120]", image_file="bit-images/artribe3/r_leg.png"),
     ]
     db.session.bulk_save_objects(categories)
     db.session.commit()
@@ -337,6 +369,7 @@ def get_bit(part, category):
     return data
 
 def add_bot(id, level, head_id, body_id, larm_id, rarm_id, lleg_id, rleg_id):
+    print(id, level, head_id, body_id, larm_id, rarm_id, lleg_id, rleg_id)
     head =      get_bit(0, head_id)
     body =      get_bit(1, body_id)
     left_arm =  get_bit(2, larm_id)
@@ -397,15 +430,15 @@ def decide_points(type, c_id, body=False, points=[]):
     generatedImg.show()
 
 def generate_random(amount):
-    maxCat = 18+1
-    for _ in range(0, amount):
+    maxCat = 22+1
+    for i in range(0, amount):
         head =      get_bit(0, random.randrange(0, maxCat))
         body =      get_bit(1, random.randrange(0, maxCat))
         left_arm =  get_bit(2, random.randrange(0, maxCat))
         right_arm = get_bit(3, random.randrange(0, maxCat))
         left_leg =  get_bit(4, random.randrange(0, maxCat))
         right_leg = get_bit(5, random.randrange(0, maxCat))
-        create_pic(random.randrange(0, 99999), head, body, left_arm, right_arm, left_leg, right_leg, False)
+        create_pic(i, head, body, left_arm, right_arm, left_leg, right_leg, False)
 
 
 def get_bots():
