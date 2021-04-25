@@ -11,22 +11,22 @@ contract = w3.eth.contract(address=contract_address, abi=contract_abi)
 def get_digit(number, n):
     return (number // n) % 100
 
-def log_loop(newBot_filter, combine_filter, poll_interval):
-    while True:
-        for event in newBot_filter.get_new_entries():
-            bot = event['args']
-            bits = bot['bits']
-            print(bits)
-            print(bot)
-            dbh.add_bot(bot['id'], get_digit(bits, 1), get_digit(bits, 1000000000000), get_digit(bits, 10000000000), get_digit(bits, 100000000), get_digit(bits, 1000000), get_digit(bits, 10000), get_digit(bits, 100))
-        for event in combine_filter.get_new_entries():
-            args = event['args']
-            bits = args['bits']
-            print(args)
-            dbh.add_bot(args['newID'], get_digit(bits, 1), get_digit(bits, 1000000000000), get_digit(bits, 10000000000), get_digit(bits, 100000000), get_digit(bits, 1000000), get_digit(bits, 10000), get_digit(bits, 100))
-            dbh.combined(args['newID'], args['firstID'], args['secondID'])
-        time.sleep(poll_interval)
+# def log_loop(newBot_filter, combine_filter, poll_interval):
+#     while True:
+#         for event in newBot_filter.get_new_entries():
+#             bot = event['args']
+#             bits = bot['bits']
+#             print(bits)
+#             print(bot)
+#             dbh.add_bot(bot['id'], get_digit(bits, 1), get_digit(bits, 1000000000000), get_digit(bits, 10000000000), get_digit(bits, 100000000), get_digit(bits, 1000000), get_digit(bits, 10000), get_digit(bits, 100))
+#         for event in combine_filter.get_new_entries():
+#             args = event['args']
+#             bits = args['bits']
+#             print(args)
+#             dbh.add_bot(args['newID'], get_digit(bits, 1), get_digit(bits, 1000000000000), get_digit(bits, 10000000000), get_digit(bits, 100000000), get_digit(bits, 1000000), get_digit(bits, 10000), get_digit(bits, 100))
+#             dbh.combined(args['newID'], args['firstID'], args['secondID'])
+#         time.sleep(poll_interval)
 
-newBot_filter = contract.events.NewBot.createFilter(fromBlock='latest')
-combine_filter = contract.events.CombinedBot.createFilter(fromBlock='latest')
-Thread(target=log_loop, args=(newBot_filter, combine_filter, 2)).start()
+# newBot_filter = contract.events.NewBot.createFilter(fromBlock='latest')
+# combine_filter = contract.events.CombinedBot.createFilter(fromBlock='latest')
+# Thread(target=log_loop, args=(newBot_filter, combine_filter, 5)).start()

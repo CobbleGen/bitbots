@@ -4,7 +4,14 @@
     {% block title %}{{address}}'s BitBots!{% endblock %}
 {% endblock %}
 
+{% block head %}
+    <link rel="stylesheet" href="{{url_for('static', filename='style/style-mybots.css')}}">
+{% endblock %}
+
 {% block content %}
-    <div id="bot-array" data-type="wallet" data-id="{{address}}">
+    <div class="my-bot-page">
+        <h1>My Bots</h1>
+        <div id="bot-array" data-type="wallet" data-id="{{address}}">
+        </div>
     </div>
 {% endblock %}

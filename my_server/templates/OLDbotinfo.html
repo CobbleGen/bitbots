@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block headline %}
+    
+{% endblock %}
+{% block title %}Bitbots!{% endblock %}
+
+{% block content %}
+<div id="bot-page">
+    <div class="bot-info">
+        <div class="bitbot">
+            <h2 id="bot-title">Bitbot #{{bot.id}}</h2>
+            <h3>Level {{bot.level}}</h3>
+            <img class="bot-img" src="{{url_for('static', filename='bots-images/'+ bot.image_file)}}" alt="">
+        </div>
+
+        <div class="bot-parts">
+            <div class="part rarity-{{bot.head.category.rarity}}">
+                <img src="{{url_for('static', filename=bot.head.image)}}" alt="">
+            </div>
+            <div class="part rarity-{{bot.body.category.rarity}}">
+                <img  src="{{url_for('static', filename=bot.body.image)}}" alt="">
+            </div>
+            <div class="part rarity-{{bot.left_arm.category.rarity}}">
+                <img src="{{url_for('static', filename=bot.left_arm.image)}}" alt="">
+            </div>
+            <div class="part rarity-{{bot.right_arm.category.rarity}}">
+                <img src="{{url_for('static', filename=bot.right_arm.image)}}" alt="">
+            </div>
+            <div class="part rarity-{{bot.left_leg.category.rarity}}">
+                <img src="{{url_for('static', filename=bot.left_leg.image)}}" alt="">
+            </div>
+            <div class="part rarity-{{bot.right_leg.category.rarity}}">
+                <img src="{{url_for('static', filename=bot.right_leg.image)}}" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="parts-info">
+        <div class="info-part">
+            <div class="img-div">
+                <img src="{{url_for('static', filename=bot.head.image)}}" alt="">
+            </div>
+            <div>
+                <h2>{{bot.head.name}}</h2>
+                <h4>Part of: {{bot.head.category.name}}</h4>
+                <h4>Made by: {{bot.head.category.creator}}</h4>
+                <h4 class="rarity-{{bot.head.category.rarity}}">{{bot.head.category.rarity}} : 1/{{bot.head.amount}}</h4>
+            </div>  
+        </div>
+
+        <div class="info-part">
+            <div class="img-div">
+                <img src="{{url_for('static', filename=bot.body.image)}}" alt="">
+            </div>
+            <div>
+                <h2>{{bot.body.name}}</h2>
+                <h4>Part of: {{bot.body.category.name}}</h4>
+                <h4>Made by: {{bot.body.category.creator}}</h4>
+                <h4 class="rarity-{{bot.body.category.rarity}}">{{bot.body.category.rarity}} : 1/{{bot.body.amount}}</h4>
+            </div>
+        </div>
+
+        <div class="info-part">
+            <div class="img-div">
+                <img src="{{url_for('static', filename=bot.left_arm.image)}}" alt="">
+            </div>
+            <div>
+                <h2>{{bot.left_arm.name}}</h2>
+                <h4>Part of: {{bot.left_arm.category.name}}</h4>
+                <h4>Made by: {{bot.left_arm.category.creator}}</h4>
+                <h4 class="rarity-{{bot.left_arm.category.rarity}}">{{bot.left_arm.category.rarity}} : 1/{{bot.left_arm.amount}}</h4>
+            </div>  
+        </div>
+
+        <div class="info-part">
+            <div class="img-div">
+                <img src="{{url_for('static', filename=bot.right_arm.image)}}" alt="">
+            </div>
+            <div>
+                <h2>{{bot.right_arm.name}}</h2>
+                <h4>Part of: {{bot.right_arm.category.name}}</h4>
+                <h4>Made by: {{bot.right_arm.category.creator}}</h4>
+                <h4 class="rarity-{{bot.right_arm.category.rarity}}">{{bot.right_arm.category.rarity}} : 1/{{bot.right_arm.amount}}</h4>
+            </div>
+        </div>
+
+        <div class="info-part">
+            <div class="img-div">
+                <img src="{{url_for('static', filename=bot.left_leg.image)}}" alt="">
+            </div>
+            <div>
+                <h2>{{bot.left_leg.name}}</h2>
+                <h4>Part of: {{bot.left_leg.category.name}}</h4>
+                <h4>Made by: {{bot.left_leg.category.creator}}</h4>
+                <h4 class="rarity-{{bot.left_leg.category.rarity}}">{{bot.left_leg.category.rarity}} : 1/{{bot.left_leg.amount}}</h4>
+            </div>  
+        </div>
+
+        <div class="info-part">
+            <div class="img-div">
+                <img src="{{url_for('static', filename=bot.right_leg.image)}}" alt="">
+            </div>
+            <div>
+                <h2>{{bot.right_leg.name}}</h2>
+                <h4>Part of: {{bot.right_leg.category.name}}</h4>
+                <h4>Made by: {{bot.right_leg.category.creator}}</h4>
+                <h4 class="rarity-{{bot.right_leg.category.rarity}}">{{bot.right_leg.category.rarity}} : 1/{{bot.right_leg.amount}}</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="history-tree">
+    {% macro branch(bot)%}
+        <div class="branch">
+            <img src="{{url_for('static', filename='bots-images/'+ bot.owner|string + '.png')}}" alt="">
+            <div class="branch-children">
+                {% if bot.from1 is not none %}
+                    {{ branch(bot.from1)}}
+                {% else %}
+                    <img src="{{url_for('static', filename='bots-images/'+ bot.mf_1|string + '.png')}}" alt="">
+                {% endif %}
+
+                {% if bot.from2 is not none %}
+                    {{ branch(bot.from2)}}
+                {% else %}
+                    <img src="{{url_for('static', filename='bots-images/'+ bot.mf_2|string + '.png')}}" alt="">
+                {% endif %}
+            </div>
+        </div>
+    {% endmacro %}
+
+    {% if history_tree is not none %}
+        {{ branch(history_tree) }}
+    {% endif %}
+</div>
+{% endblock %}

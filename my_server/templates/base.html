@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{url_for('static', filename='style/style.css')}}">
+        <script src="https://kit.fontawesome.com/dae2011dd3.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;500;700&display=swap" rel="stylesheet">
-
-        <script language="javascript" type="text/javascript" src="{{url_for('static', filename='scripts/eth/web3.min.js')}}"></script>
         <script defer src="{{url_for('static', filename='scripts/script.js')}}"></script>
-        <script src="{{url_for('static', filename='scripts/jquery.connections.js')}}"></script>
-        <title>{% block title %}{% endblock %}</title>
+        <script src="{{url_for('static', filename='scripts/eth/web3.min.js')}}"></script>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='Images/favicon.ico') }}">
         {% block head %}{% endblock %}
+        <title>{% block title %}{% endblock %}</title>
     </head>
     <body>
-        <div class="container">
-            <nav class="nav">
-                <div>
-                    <a class="nav-link" href="{{ url_for('start') }}"><h1>Bitbots</h1></a>
-                    
-                </div>
-                <div>
-                    <a class="nav-link" href="{{ url_for('combine') }}">Combine</a>
-                    <a class="nav-link" href="{{ url_for('wallet') }}">My Bots</a>
-                    <div class="button" id="connect-btn">Connect</div>
-                </div>
-            </nav>
-            <br />
-            <div id="header"><h2>{% block headline %}{% endblock %}</h2></div>
-            <div style="padding-bottom: 20px">
-                    {% block content %}
-                    {% endblock %}
-            </div>
+        <nav>
+            <ul>
+                <li><a href="{{url_for('combine')}}">Combine</a></li>
+                <li><a href="{{url_for('wallet')}}">My Bots</a></li>
+                <li><div id="connect-button">Connect</div></li>
+            </ul>
+            <a href="#"><img src="{{url_for('static', filename='Images/Logo-bitbot-white.png')}}" alt=""></a>
+        </nav>
+        <div id="main-content">
+            {% block content %}
+            {% endblock %}
         </div>
+        <div class="flex-center">
+            <a href="https://twitter.com/BitBotsNFT"><i class="fa fa-twitter fa-2x icon-3d"></i>
+            <a href="https://discord.gg/yeUAFCySxd"><i class="fab fa-discord fa-2x icon-3d"></i>
+        </div>
+
+        <script src="{{url_for('static', filename='scripts/vanilla-tilt.min.js')}}"></script>
+        <script type="text/javascript">
+            VanillaTilt.init(document.querySelectorAll(".box"), 
+            {
+                max: 25,
+                speed: 400
+            });
+        </script>
     </body>
 </html>

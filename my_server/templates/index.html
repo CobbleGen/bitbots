@@ -1,19 +1,139 @@
 {% extends 'base.html' %}
 
-{% block headline %}
-There are currently {{ tot_bots }} out of 10 000 BitBots minted!
-{% endblock %}
-{% block title %}Bitbots!{% endblock %}
-
+{% block title %}Bitbodddts!{% endblock %}
+{% block head %}<script defer src="{{url_for('static', filename='scripts/scroll.js')}}"></script>{% endblock %}
 
 {% block content %}
-    <div id="mint-page">
-        <label for="quantity">Quantity (between 1 and 15):</label>
-        <input type="number" id="quantity" name="quantity" min="1" max="15" step="1" value="1">
-        <br />
-        <div class="button" id="mint-button">
-            <h3>Mint your bot!</h3>
+    <header>
+        <img src="{{url_for('static', filename='Images/l0.png')}}" class="layer-zero translate" data-speed="0" alt="">
+        <img src="{{url_for('static', filename='Images/Comp-2.gif')}}" class="layer-one-gif translate" data-speed="-0.9" alt="">
+        <img src="{{url_for('static', filename='Images/l1.png')}}" class="layer-one translate" data-speed="-0.9" alt="">
+        <img src="{{url_for('static', filename='Images/l2.png')}}" class="layer-two translate" data-speed="-0.6" alt="">
+        <img src="{{url_for('static', filename='Images/l3.png')}}" class="layer-three translate" data-speed="-0.5" alt="">
+        <img src="{{url_for('static', filename='Images/bot.gif')}}" class="layer-four translate" data-speed="0.4" alt="">
+        <img src="{{url_for('static', filename='Images/l5.png')}}" class="layer-five translate" data-speed="-0.1" alt="">
+        <img src="{{url_for('static', filename='Images/l6.png')}}" class="layer-six translate" data-speed="-0.2" alt="">
+        <div class="banner-overlay">
+            <div class="logo">
+                <img src="{{url_for('static', filename='Images/Logo-bitbot.png')}}" alt="">
+            </div>
+            <h1>Current Bots Minted</h1>
+            <p id="demo"></p>
+            <h2 class="bots-left">2048 bots left!</h2>
+            <div class="progress">
+                <div class="progress-done mint-amount" data-done="1">
+                    0 out of 2048
+                </div>
+            </div>
+            <button type="button" onclick="togglePopup()">Click To Mint</button>
         </div>
-        <h5>Costs 0.05 eth each</h5>
+
+        <div class="full-screen hidden flex-container-center">
+            <div class="bottom-div">
+                <div class="box fade" id="preview-box">
+                    <h2 class="card-bot-name"></h2>
+                    <img class="product" src="{{url_for('static', filename='Images/cycle-gif.gif')}}" alt="">
+                </div>
+                <i class="fas fa-chevron-right next-btn"></i>
+                <div class="left-side">
+                    <button type="button" class="cross-button" onclick="togglePopup()"><i class="fas fa-times fa-lg"></i></button>
+                    <h2 class="bitbot-collection-h2">BitBot Collection</h2>
+                    <p>A fun set of unique trading cards featuring artwork from top NFT artists and projects.</p>
+                    <div class="current-left">
+                        <h2 class="current-price">CURRENT PRICE<i class="far fa-hourglass fa-1x">
+                        </i><span class="left-at-this-price bots-left"> packs left at current price</span></h2>
+                    </div>
+                    <div class="ethereum-price">
+                        <i class="fab fa-ethereum fa-2x"></i>
+                        <h2>0.06</h2>
+                    </div>
+                    <div class="range-input">
+                        <input class="slide" type="range" min="1" max="16" value="1" step="1">
+                        <div class="value">
+                            <div></div>
+                        </div>
+                    </div>
+                    <h2 class="total-price">TOTAL PRICE</h2>
+                    <div class="ethereum-price">
+                        <i class="fab fa-ethereum fa-2x"></i>
+                        <div class="sliderAmount">
+                            <div>0.06</div>
+                        </div>
+                    </div>
+                    <button type="button" class="buy-now-button">Buy Now </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="shadow"></div>
+    </section>
+
+    <div class="bit-combine">
+        <h1>Randomly Created Bots on the Chain</h1>
+        <div class="container-bot-combine">
+            <video autoplay muted loop>
+                <source src="{{url_for('static', filename='Images/switching.mp4')}}" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+            <p>
+                After the great robot purge we all thought we were safe, but life is brewing among the scattered remains of the insurgent robots with vengeance fueling their return. 
+                With your help we can bring them back to their former glory! <br /><br /> 
+                By minting a bot, you will get a random assortment of bot remnants from the junkyard, assembled into one bot. 
+                Each bot is randomly generated on the ethereum blockchain and is sellable and tradeable there. 
+                After you've collected at least 2 bots, you can then forge them together into a new one, consisting of your favorite parts from each!
+            </p>
+        </div>
+    </div>
+
+    <div class="bit-combine selection-two">
+        <h1>Trade and Collect</h1>
+        <div class="container-bot-combine">
+            <div class="container-card">
+                <div class="box" id="preview-box">
+                    <img class="product" src="{{url_for('static', filename='bots-images/'+bot.image_file)}}" alt="">
+                    <div class="pre-box fly">
+                        <div>
+                            <img src="{{url_for('static', filename='bots-images/'+bot.image_file)}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>
+                The bots are made by taking a head, a body, two arms, and two legs from a pool of 29 bots made by 7 different artists! 
+                These random bits are generated on the blockchain and then put together into your unique bot with code. <br /> <br />
+                There are close to 600 million possible combinations, but only <b>2048</b> will ever be sold! <br />
+                Some robot parts are also more rare to find!
+            </p>
+        </div>
+    </div>
+
+    <div class="bit-combine">
+        <h1>Combine Favourite Bits Into New Bots</h1>
+        <div class="container-bot-combine">
+            <video autoplay muted loop>
+                <source src="{{url_for('static', filename='Images/combine.mp4')}}" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+            <p>
+                After succesfully reviving your bot army you can start combining two of them together to make a new one consisting of whichever parts you want to keep from the first two!
+                This will burn the previous bots and forge together them into the new one. <br /> If the two bots had the same level, the new forged bot's level will increase by 1!<br /><br />
+                This means that after all the level 1 bots are minted, the supply will constantly be decreasing! <br />
+                It will also throw a wrench in the gears of rarities, if most of one common part is burnt because nobody wants it, that part is suddenly rare! <br /><br />
+                Collect parts to put together a good looking robot, or collect everything from the same collection and make a <b>complete</b> bot.
+            </p>
+        </div>
+    </div>
+
+    <div class="bit-combine timeline">
+        <h1>Project Timeline</h1>
+        <main>
+            <p class="done">Launch the BitBots collection!</p>
+            <p>Launch secret pre-programmed bot event!</p>
+            <p>Website trading marketplace!</p>
+            <p>Create 3D BitBots sister project!</p>
+            <p>BitBots as avatars and game characters!</p>
+          </main>
     </div>
 {% endblock %}

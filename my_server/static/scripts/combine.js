@@ -110,3 +110,9 @@ function updatePreview() {
     if(parts[5] !== null) $('#pre-r_leg').attr("src", "static/"+ (parts[5] ? bot2 : bot1).right_leg.image);
     if(bot1 != undefined && bot2 != undefined) $('#lvl-pre').text("Level " + (bot1.level == bot2.level ? bot1.level+1 : bot1.level > bot2.level ? bot1.level : bot2.level));
 }
+
+const popup = document.querySelector('.forge-animation');
+
+function togglePopup(){
+    popup.classList.toggle('hidden');
+}

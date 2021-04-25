@@ -1,13 +1,14 @@
 from os import abort
 from my_server import app, dbhandler
 from flask import jsonify, render_template, url_for, request
+import random
 
 
 @app.route('/')
 @app.route('/index')
 def start():
-    tot_bots = len(dbhandler.get_bots())
-    return render_template('index.html', tot_bots = tot_bots)
+    bot = dbhandler.get_bot(random.randrange(0, 100))
+    return render_template('index.html', bot=bot.serialize)
 
 @app.route('/bots')
 def bots():

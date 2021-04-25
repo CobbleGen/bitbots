@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block headline %}
+    {% block title %}Combine bots{% endblock %}
+{% endblock %}
+{% block head %}
+    <script defer src="{{url_for('static', filename='bvselect/js/bvselect.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='bvselect/css/bvselect.css')}}">
+    <script defer src="{{url_for('static', filename='scripts/combine.js')}}"></script>
+    
+{% endblock %}
+
+{% block content %}
+    <div id="select-box">
+        <div id="select1" class="bot-select">
+            <select id="selectbotbox1">
+            </select>
+
+            <div class="bot-info">
+                <div class="bitbot">
+                    <h3 id="lvl-1">Level 0</h3>
+                    <img id="select-img1" class="bot-img" src="{{url_for('static', filename='bit-images/placeholder/whole.png')}}" alt="">
+                </div>
+        
+                <div id="first" class="bot-parts">
+                    <div class="part rarity-Common head">
+                        <img id="head1" src="{{url_for('static', filename='bit-images/placeholder/head.png')}}" alt="">
+                    </div>
+                    <div class="part rarity-Common body">
+                        <img id="body1" src="{{url_for('static', filename='bit-images/placeholder/body.png')}}" alt="">
+                    </div>
+                    <div class="part rarity-Common l_arm">
+                        <img id="l_arm1"src="{{url_for('static', filename='bit-images/placeholder/l_arm.png')}}" alt="">
+                    </div>
+                    <div class="part rarity-Common r_arm">
+                        <img id="r_arm1" src="{{url_for('static', filename='bit-images/placeholder/r_arm.png')}}" alt="">
+                    </div>
+                    <div class="part rarity-Common l_leg">
+                        <img id="l_leg1" src="{{url_for('static', filename='bit-images/placeholder/l_leg.png')}}" alt="">
+                    </div>
+                    <div class="part rarity-Common r_leg">
+                        <img id="r_leg1" src="{{url_for('static', filename='bit-images/placeholder/r_leg.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="bot-result">
+            <h2>Result:</h2>
+            <div id="preview-box">
+                <h3 id="lvl-pre">Level 0</h3>
+                <div class="pre-box" id="top-box">
+                    <div>
+                        <img id="pre-head" src="{{url_for('static', filename='bit-images/placeholder/head.png')}}" alt="">
+                    </div>
+                </div>
+                <div class="pre-box">
+                    <div>
+                        <img id="pre-l_arm"src="{{url_for('static', filename='bit-images/placeholder/l_arm.png')}}" alt="">
+                    </div>
+                    <div>
+                        <img id="pre-body" src="{{url_for('static', filename='bit-images/placeholder/body.png')}}" alt="">
+                    </div>
+                    <div>
+                        <img id="pre-r_arm" src="{{url_for('static', filename='bit-images/placeholder/r_arm.png')}}" alt="">
+                    </div>
+                </div>
+                <div class="pre-box">
+                    <div>
+                        <img id="pre-l_leg" src="{{url_for('static', filename='bit-images/placeholder/l_leg.png')}}" alt="">
+                    </div>
+                    <div>
+                        <img id="pre-r_leg" src="{{url_for('static', filename='bit-images/placeholder/r_leg.png')}}" alt="">
+                    </div> 
+                </div>
+            </div>
+            <div class="button" id="combine-btn">
+                Combine!
+            </div>
+        </div>
+        <div id="select1" class="bot-select">
+            <select id="selectbotbox2">
+            </select>
+
+            <div class="bot-info reverse">
+                <div class="bitbot">
+                    <h3 id="lvl-2">Level 0</h3>
+                    <img id="select-img2" class="bot-img" src="{{url_for('static', filename='bit-images/placeholder/whole.png')}}" alt="">
+                </div>
+        
+                <div class="bot-parts">
+                    <div class="part rarity-Common head">
+                        <img id="head2" src="{{url_for('static', filename='bit-images/placeholder/head.png')}}" alt="">
+                    </div>
+                    <div class="part rarity-Common body">
+                        <img id="body2" src="{{url_for('static', filename='bit-images/placeholder/body.png')}}" alt="">
+                    </div>
+                    <div class="part rarity-Common l_arm">
+                        <img id="l_arm2"src="{{url_for('static', filename='bit-images/placeholder/l_arm.png')}}" alt="">
+                    </div>
+                    <div class="part rarity-Common r_arm">
+                        <img id="r_arm2" src="{{url_for('static', filename='bit-images/placeholder/r_arm.png')}}" alt="">
+                    </div>
+                    <div class="part rarity-Common l_leg">
+                        <img id="l_leg2" src="{{url_for('static', filename='bit-images/placeholder/l_leg.png')}}" alt="">
+                    </div>
+                    <div class="part rarity-Common r_leg">
+                        <img id="r_leg2" src="{{url_for('static', filename='bit-images/placeholder/r_leg.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+{% endblock %}
