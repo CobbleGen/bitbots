@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Bitbodddts!{% endblock %}
+{% block title %}Bitbot #{{bot.id}}{% endblock %}
 
 {% block head %}
     <link rel="stylesheet" href="{{url_for('static', filename='style/style-solobots.css')}}">
@@ -22,7 +22,7 @@
                             <h2>Head</h2>
                             <p><span>NAME:</span> {{bot.head.name}}<br>
                                 <span>PART OF:</span> {{bot.head.category.name}}<br>
-                                <span>MADE BY:</span> {{bot.head.category.creator}}<br>
+                                <span>MADE BY:</span><a href="https://twitter.com/{{bot.head.category.creator}}"> {{bot.head.category.creator}}</a><br>
                                 <span>RARITY:</span> {{bot.head.category.rarity}}, only {{bot.head.amount}} in existance<br>
                             </p>
                             <hr/>
@@ -31,7 +31,7 @@
                             <h2>Body</h2>
                             <p><span>NAME:</span> {{bot.body.name}}<br>
                                 <span>PART OF:</span> {{bot.body.category.name}}<br>
-                                <span>MADE BY:</span> {{bot.body.category.creator}}<br>
+                                <span>MADE BY:</span><a href="https://twitter.com/{{bot.body.category.creator}}"> {{bot.body.category.creator}}</a><br>
                                 <span>RARITY:</span> {{bot.body.category.rarity}}, only {{bot.body.amount}} in existance<br>
                             </p>
                             <hr/>
@@ -40,7 +40,7 @@
                             <h2>Right Arm</h2>
                             <p><span>NAME:</span> {{bot.right_arm.name}}<br>
                                 <span>PART OF:</span> {{bot.right_arm.category.name}}<br>
-                                <span>MADE BY:</span> {{bot.right_arm.category.creator}}<br>
+                                <span>MADE BY:</span><a href="https://twitter.com/{{bot.right_arm.category.creator}}"> {{bot.right_arm.category.creator}}</a><br>
                                 <span>RARITY:</span> {{bot.right_arm.category.rarity}}, only {{bot.right_arm.amount}} in existance<br>
                             </p>
                             <hr/>
@@ -49,7 +49,7 @@
                             <h2>Left Arm</h2>
                             <p><span>NAME:</span> {{bot.left_arm.name}}<br>
                                 <span>PART OF:</span> {{bot.left_arm.category.name}}<br>
-                                <span>MADE BY:</span> {{bot.left_arm.category.creator}}<br>
+                                <span>MADE BY:</span><a href="https://twitter.com/{{bot.left_arm.category.creator}}"> {{bot.left_arm.category.creator}}</a><br>
                                 <span>RARITY:</span> {{bot.left_arm.category.rarity}}, only {{bot.left_arm.amount}} in existence<br>
                             </p>
                             <hr/>
@@ -58,7 +58,7 @@
                             <h2>Right Leg</h2>
                             <p><span>NAME:</span> {{bot.right_leg.name}}<br>
                                 <span>PART OF:</span> {{bot.right_leg.category.name}}<br>
-                                <span>MADE BY:</span> {{bot.right_leg.category.creator}}<br>
+                                <span>MADE BY:</span><a href="https://twitter.com/{{bot.right_leg.category.creator}}"> {{bot.right_leg.category.creator}}</a><br>
                                 <span>RARITY:</span> {{bot.right_leg.category.rarity}}, only {{bot.right_leg.amount}} in existence<br>
                             </p>
                             <hr/>
@@ -67,7 +67,7 @@
                             <h2>Left Leg</h2>
                             <p><span>NAME:</span> {{bot.left_leg.name}}<br>
                                 <span>PART OF:</span> {{bot.left_leg.category.name}}<br>
-                                <span>MADE BY:</span> {{bot.left_leg.category.creator}}<br>
+                                <span>MADE BY:</span><a href="https://twitter.com/{{bot.left_leg.category.creator}}"> {{bot.left_leg.category.creator}}</a><br>
                                 <span>RARITY:</span> {{bot.left_leg.category.rarity}}, only {{bot.left_leg.amount}} in existence<br>
                             </p>
                         </div>

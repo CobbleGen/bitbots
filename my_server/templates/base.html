@@ -7,10 +7,12 @@
         <link rel="stylesheet" href="{{url_for('static', filename='style/style.css')}}">
         <script src="https://kit.fontawesome.com/dae2011dd3.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script defer src="{{url_for('static', filename='scripts/script.js')}}"></script>
-        <script src="{{url_for('static', filename='scripts/eth/web3.min.js')}}"></script>
-        <link rel="shortcut icon" href="{{ url_for('static', filename='Images/favicon.ico') }}">
         {% block head %}{% endblock %}
+        <script defer src="{{url_for('static', filename='scripts/script.js')}}"></script>
+        <!-- <script src="{{url_for('static', filename='scripts/eth/web3.min.js')}}"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='Images/favicon.ico') }}">
+       
         <title>{% block title %}{% endblock %}</title>
     </head>
     <body>
@@ -20,7 +22,7 @@
                 <li><a href="{{url_for('wallet')}}">My Bots</a></li>
                 <li><div id="connect-button">Connect</div></li>
             </ul>
-            <a href="#"><img src="{{url_for('static', filename='Images/Logo-bitbot-white.png')}}" alt=""></a>
+            <a href="{{url_for('start')}}"><img src="{{url_for('static', filename='Images/Logo-bitbot-white.png')}}" alt=""></a>
         </nav>
         <div id="main-content">
             {% block content %}

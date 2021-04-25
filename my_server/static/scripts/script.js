@@ -3,6 +3,7 @@ let contract;
 let accounts;
 let result;
 let connected = false;
+let price;
 $("#connect-button").click(async function (e) { 
     if (window.ethereum) {
       window.web3 = new Web3(window.ethereum);
@@ -23,10 +24,12 @@ async function setUpBlockchain() {
     accounts = await web3.eth.getAccounts();
     connected = accounts.length > 0;
 
-    const lcontract = new web3.eth.Contract(abi, "0x69DD9B274ddeF3C8625147ccF57870E03fbef025");
+    const lcontract = new web3.eth.Contract(abi, "0xe9Bb0Ae73743caAac9604F032d63BC3490976E30");
     let totalMinted;
     try {
         totalMinted = await lcontract.methods.totalMinted().call();
+        price = await lcontract.methods.getPrice().call();
+        $('.curr-price').html(""+((price/1000000000000000000).toFixed(3)));
         contract = lcontract;
         if(connected)$("#connect-button").text(accounts[0].slice(0,7)+"...");
         $(".mint-amount").text(totalMinted + " out of 2048")
@@ -53,7 +56,7 @@ window.onload = function() {
     setUpBlockchain();
   } else {
     //Change to mainnet
-    window.web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/df1bf651fb8b46a19b9574206b184064'));
+    window.web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/df1bf651fb8b46a19b9574206b184064'));
     setUpBlockchain();
   }
 };
@@ -65,7 +68,7 @@ $('.buy-now-button').click(function () {
     } else {
       const amount = parseInt($(".slide").val());
       $(this).html('<img class="loading-gear" src="/static/Images/loading-gear.gif"></img> Pending...')
-      contract.methods.mintBot(amount).send({ from: accounts[0], value: 60000000000000000*amount }).then(
+      contract.methods.mintBot(amount).send({ from: accounts[0], value: price*amount }).then(
         function(res) {
           const botVals = res.events.NewBot;
           console.log(botVals);
@@ -79,14 +82,14 @@ $('.buy-now-button').click(function () {
             $(".next-btn").show().click(function() {
               if(index < bots.length-1) {index++} else {index = 0};
               $('.card-bot-name').text('Bitbot #' + bots[index]);
-              $('.product').attr('src', 'http://localhost:8070/static/bots-images/'+bots[index]+'.PNG');
+              $('.product').attr('src', 'http://bitbots.app/static/bots-images/'+bots[index]+'.PNG');
             });
 
           } else {
             bots.push(botVals.returnValues.id);
           }
           console.log(bots);
-          $('.product').attr('src', 'http://localhost:8070/static/bots-images/'+bots[0]+'.PNG');
+          $('.product').attr('src', 'http://bitbots.app/static/bots-images/'+bots[0]+'.PNG');
           $('.card-bot-name').text('Bitbot #' + bots[0]);
           $('.buy-now-button').html('Buy Now');
         }
@@ -113,23 +116,25 @@ async function renderBotArrays() {
     for (let i = 0; i < balance; i++) {
         const e = await contract.methods.tokenOfOwnerByIndex(accounts[0], i).call();
         $(arrayDiv).append(`
+        
         <div class="card">
+        <a href="/botinfo/${e}">
           <div class="card__inner" data-bot-id="${e}">
               <div class="card__face card__face--front">
                   <img src="/static/bots-images/${e}.png" alt="">
                   <h2 class="card-bot-name">Bot #${e}</h2>
-                  <h2 class="card-bot-level">Level 2</h2>
               </div>
               <div class="card__face card__face--back">
                   <div class="back-card-bot-parts">
                   </div>
               </div>
           </div>
+          </a>
       </div>
         `);
     }
     $('.card').mouseenter(function() {
-      const inner = $(this).children('.card__inner');
+      const inner = $(this).find('.card__inner');
       const id = $(inner).data("bot-id");
       if(!$(inner).addClass('is-flipped').hasClass('generated')) {
         $(inner).addClass('generated');
@@ -180,7 +185,7 @@ async function renderBotArrays() {
         });
       };
     }).mouseleave(function() {
-      $(this).children('.card__inner').removeClass('is-flipped');
+      $(this).find('.card__inner').removeClass('is-flipped');
     })
   }
 }
@@ -194,7 +199,7 @@ $(".branch").each(function() {
 })
   
 $('.card').mouseenter(function() {
-  const inner = $(this).children('.card__inner');
+  const inner = $(this).find('.card__inner');
   const id = $(inner).data("bot-id");
   if(!$(inner).addClass('is-flipped').hasClass('generated')) {
     $(inner).addClass('generated');
@@ -245,10 +250,10 @@ $('.card').mouseenter(function() {
     });
   };
 }).mouseleave(function() {
-  $(this).children('.card__inner').removeClass('is-flipped');
+  $(this).find('.card__inner').removeClass('is-flipped');
 })
 
-var countDownDate = new Date(Date.UTC(2021, 3, 25, 10, 45, 0)).getTime();
+var countDownDate = new Date(Date.UTC(2021, 3, 25, 21, 0, 0)).getTime();
 
 var x = setInterval(function() {
 
@@ -264,8 +269,7 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = hours + "h "
-  + minutes + "m " + seconds + "s ";
+  $("#demo").html( hours + "h "+ minutes + "m " + seconds + "s");
 
   //If the count down is finished, write some text
   if (distance < 0) {
@@ -274,3 +278,24 @@ var x = setInterval(function() {
     $('.buy-now-button').addClass('buyable');
   }
 }, 1000);
+
+if($('.range-input')) {
+  let rangeInput = document.querySelector(".range-input input");
+  let rangeValue = document.querySelector(".range-input .value div");
+  let totalValue = document.querySelector(".sliderAmount div")
+  
+  let start = 1;
+  let end = parseFloat(rangeInput.max);
+  let step = parseFloat(rangeInput.step);
+  
+  for(let i=start;i<=end;i+=step){
+    rangeValue.innerHTML += '<div>'+"X"+i+'</div>';
+  }
+
+  rangeInput.addEventListener("input",function(){
+    let top = ((parseFloat(rangeInput.value)/step)-1) * -40;
+    rangeValue.style.marginTop = top+"px";
+
+    totalValue.innerHTML = (rangeInput.value*(price/1000000000000000000)).toFixed(3);
+  });
+}

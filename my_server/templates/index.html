@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Bitbodddts!{% endblock %}
+{% block title %}Bitbots! - Homepage{% endblock %}
 {% block head %}<script defer src="{{url_for('static', filename='scripts/scroll.js')}}"></script>{% endblock %}
 
 {% block content %}
@@ -45,7 +45,7 @@
                     </div>
                     <div class="ethereum-price">
                         <i class="fab fa-ethereum fa-2x"></i>
-                        <h2>0.06</h2>
+                        <h2 class="curr-price">0.06</h2>
                     </div>
                     <div class="range-input">
                         <input class="slide" type="range" min="1" max="16" value="1" step="1">
@@ -57,7 +57,7 @@
                     <div class="ethereum-price">
                         <i class="fab fa-ethereum fa-2x"></i>
                         <div class="sliderAmount">
-                            <div>0.06</div>
+                            <div class="curr-price">0.06</div>
                         </div>
                     </div>
                     <button type="button" class="buy-now-button">Buy Now </button>
@@ -92,10 +92,10 @@
         <div class="container-bot-combine">
             <div class="container-card">
                 <div class="box" id="preview-box">
-                    <img class="product" src="{{url_for('static', filename='bots-images/'+bot.image_file)}}" alt="">
+                    <img class="product" src="{{url_for('static', filename='Images/example-bot.png')}}" alt="">
                     <div class="pre-box fly">
                         <div>
-                            <img src="{{url_for('static', filename='bots-images/'+bot.image_file)}}" alt="">
+                            <img src="{{url_for('static', filename='Images/example-bot.png')}}" alt="">
                         </div>
                     </div>
                 </div>

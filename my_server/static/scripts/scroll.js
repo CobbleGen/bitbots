@@ -27,25 +27,6 @@ window.addEventListener('scroll', () => {
     })
 })
 
-let rangeInput = document.querySelector(".range-input input");
-let rangeValue = document.querySelector(".range-input .value div");
-let totalValue = document.querySelector(".sliderAmount div")
- 
-let start = 1;
-let end = parseFloat(rangeInput.max);
-let step = parseFloat(rangeInput.step);
- 
-for(let i=start;i<=end;i+=step){
-  rangeValue.innerHTML += '<div>'+"X"+i+'</div>';
-}
-
-rangeInput.addEventListener("input",function(){
-  let top = ((parseFloat(rangeInput.value)/step)-1) * -40;
-  rangeValue.style.marginTop = top+"px";
-
-  totalValue.innerHTML = (rangeInput.value*0.06).toFixed(2);
-});
-
 
 function togglePopup(){
     popup.classList.toggle('hidden');

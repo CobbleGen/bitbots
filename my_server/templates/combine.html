@@ -4,10 +4,8 @@
     {% block title %}Combine bots{% endblock %}
 {% endblock %}
 
-    <script defer src="{{url_for('static', filename='bvselect/js/bvselect.js')}}"></script>
-    <link rel="stylesheet" href="{{url_for('static', filename='bvselect/css/bvselect.css')}}">
+{% block head %}
     <script defer src="{{url_for('static', filename='scripts/combine.js')}}"></script>
-    
 {% endblock %}
 
 {% block content %}
@@ -18,60 +16,62 @@
     
     <div class="combining-container">
         <div id="bot-result">
-            <div id="preview-box" class="fade">
-                <h3 id="lvl-pre">Level 0</h3>
+            <div id="preview-box" class="fade first">
+                <h3 id="lvl-pre-1">Level 0</h3>
                 <div class="pre-box" id="top-box">
-                    <div>
-                        <img id="pre-head" src="xr800/head.png" alt="">
+                    <div class="first">
+                        <img id="pre-head1" class="part 0" src="{{url_for('static',filename='bit-images/placeholder/head.png')}}" alt="">
                     </div>
                 </div>
                 <div class="pre-box">
-                    <div>
-                        <img id="pre-l_arm" src="xr800/l_arm.png" alt="">
+                    <div class="first">
+                        <img id="pre-l_arm1" class="part 2" src="{{url_for('static',filename='bit-images/placeholder/l_arm.png')}}" alt="">
                     </div>
-                    <div>
-                        <img id="pre-body" src="xr800/body.png" alt="">
+                    <div class="first">
+                        <img id="pre-body1" class="part 1" src="{{url_for('static',filename='bit-images/placeholder/body.png')}}" alt="">
                     </div>
-                    <div>
-                        <img id="pre-r_arm" src="xr800/r_arm.png" alt="">
+                    <div class="first">
+                        <img id="pre-r_arm1" class="part 3" src="{{url_for('static',filename='bit-images/placeholder/r_arm.png')}}" alt="">
                     </div>
                 </div>
                 <div class="pre-box">
-                    <div>
-                        <img id="pre-l_leg" src="xr800/l_leg.png" alt="">
+                    <div class="first">
+                        <img id="pre-l_leg1" class="part 4" src="{{url_for('static',filename='bit-images/placeholder/l_leg.png')}}" alt="">
                     </div>
-                    <div>
-                        <img id="pre-r_leg" src="xr800/r_leg.png" alt="">
+                    <div class="first">
+                        <img id="pre-r_leg1" class="part 5" src="{{url_for('static',filename='bit-images/placeholder/r_leg.png')}}" alt="">
                     </div> 
                 </div>
             </div>
-        </div>
 
+            
+        </div>
+        
         <div id="bot-result">
-            <div id="preview-box">
+            <div id="preview-box" class="result">
                 <h3 id="lvl-pre">Level 0</h3>
                 <div class="pre-box" id="top-box">
                     <div>
-                        <img id="pre-head" src="{{url_for('static',filename='bit-images/xr800/head.png')}}" alt="">
+                        <img id="pre-head" src="{{url_for('static',filename='bit-images/placeholder/head.png')}}" alt="">
                     </div>
                 </div>
                 <div class="pre-box">
                     <div>
-                        <img id="pre-l_arm" src="{{url_for('static',filename='bit-images/xr800/l_arm.png')}}" alt="">
+                        <img id="pre-l_arm" src="{{url_for('static',filename='bit-images/placeholder/l_arm.png')}}" alt="">
                     </div>
                     <div>
-                        <img id="pre-body" src="{{url_for('static',filename='bit-images/xr800/body.png')}}" alt="">
+                        <img id="pre-body" src="{{url_for('static',filename='bit-images/placeholder/body.png')}}" alt="">
                     </div>
                     <div>
-                        <img id="pre-r_arm" src="{{url_for('static',filename='bit-images/xr800/r_arm.png')}}" alt="">
+                        <img id="pre-r_arm" src="{{url_for('static',filename='bit-images/placeholder/r_arm.png')}}" alt="">
                     </div>
                 </div>
                 <div class="pre-box">
                     <div>
-                        <img id="pre-l_leg" src="{{url_for('static',filename='bit-images/xr800/l_leg.png')}}" alt="">
+                        <img id="pre-l_leg" src="{{url_for('static',filename='bit-images/placeholder/l_leg.png')}}" alt="">
                     </div>
                     <div>
-                        <img id="pre-r_leg" src="{{url_for('static',filename='bit-images/xr800/r_leg.png')}}" alt="">
+                        <img id="pre-r_leg" src="{{url_for('static',filename='bit-images/placeholder/r_leg.png')}}" alt="">
                     </div> 
                 </div>
                 <div class="forge-animation hidden">
@@ -82,29 +82,29 @@
 
         <div id="bot-result">
             <div id="preview-box" class="fade">
-                <h3 id="lvl-pre">Level 0</h3>
+                <h3 id="lvl-pre-2">Level 0</h3>
                 <div class="pre-box" id="top-box">
                     <div>
-                        <img id="pre-head" src="xr800/head.png" alt="">
+                        <img id="pre-head2" class="part 0" src="{{url_for('static',filename='bit-images/placeholder/head.png')}}" alt="">
                     </div>
                 </div>
                 <div class="pre-box">
                     <div>
-                        <img id="pre-l_arm" src="xr800/l_arm.png" alt="">
+                        <img id="pre-l_arm2" class="part 2" src="{{url_for('static',filename='bit-images/placeholder/l_arm.png')}}" alt="">
                     </div>
                     <div>
-                        <img id="pre-body" src="xr800/body.png" alt="">
+                        <img id="pre-body2" class="part 1" src="{{url_for('static',filename='bit-images/placeholder/body.png')}}" alt="">
                     </div>
                     <div>
-                        <img id="pre-r_arm" src="xr800/r_arm.png" alt="">
+                        <img id="pre-r_arm2" class="part 3" src="{{url_for('static',filename='bit-images/placeholder/r_arm.png')}}" alt="">
                     </div>
                 </div>
                 <div class="pre-box">
                     <div>
-                        <img id="pre-l_leg" src="xr800/l_leg.png" alt="">
+                        <img id="pre-l_leg2" class="part 4" src="{{url_for('static',filename='bit-images/placeholder/l_leg.png')}}" alt="">
                     </div>
                     <div>
-                        <img id="pre-r_leg" src="xr800/r_leg.png" alt="">
+                        <img id="pre-r_leg2" class="part 5" src="{{url_for('static',filename='bit-images/placeholder/r_leg.png')}}" alt="">
                     </div> 
                 </div>
             </div>
@@ -113,7 +113,20 @@
 
 
     <div class="forge-button" >
-        <button type="button" onclick="togglePopup()">FORGE NOW</button>
+        <div class="dropdown db1">
+            <div class="dropbtn">CHOOSE YOUR BOT</div>
+            <div class="dropdown-content pick-1">
+            </div>
+        </div>
+
+        <button type="button" id="forge-button">FORGE NOW</button>
+
+        <div class="dropdown db2">
+            <div class="dropbtn">CHOOSE YOUR BOT</div>
+            <div class="dropdown-content pick-2">
+                
+            </div>
+        </div>
     </div>
     
 {% endblock %}

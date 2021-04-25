@@ -23,7 +23,7 @@ body {
 
 .card {
     font-family: 'Poppins';
-    margin: 60px;
+    margin: 40px;
     width: 400px;
     height: 600px;
     perspective: 1000px;

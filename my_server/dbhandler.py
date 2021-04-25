@@ -172,33 +172,36 @@ def resetDB():
     db.drop_all()
     db.create_all()
     categories = [
-        Category(id=0,  name="AyshaBot",    creator="AyshaArt",     rarity="Common"),
-        Category(id=1,  name="Humunculus",  creator="Sander",       rarity="Common"),
-        Category(id=2,  name="XR-I",        creator="TR",           rarity="Common"),
-        Category(id=3,  name="TribeBot",    creator="ArtTribe",     rarity="Common"),
-        Category(id=4,  name="Goblin",      creator="TR",           rarity="Common"),
-        Category(id=5,  name="SmileBot",    creator="Sander",       rarity="Common"),
-        Category(id=6,  name="Golem",       creator="TR",           rarity="Common"),
-        Category(id=7,  name="RavenBot",    creator="Ferjart",      rarity="Common"),
-        Category(id=8,  name="ArtBot",      creator="AyshaArt",     rarity="Uncommon"),
-        Category(id=9,  name="XR-II",       creator="TR",           rarity="Uncommon"),
-        Category(id=10, name="DemonBot",    creator="Sander",       rarity="Uncommon"),
-        Category(id=11, name="PunkBot",     creator="Chabusan",     rarity="Uncommon"),
-        Category(id=12, name="BugBot",      creator="ArtTribe",     rarity="Uncommon"),
-        Category(id=13, name="Cyclops",     creator="TR",           rarity="Uncommon"),
-        Category(id=14, name="Etherbot",    creator="Ferjart",      rarity="Uncommon"),
-        Category(id=15, name="Scuboid",     creator="AyshaArt",     rarity="Rare"),
-        Category(id=16, name="Weeabot",     creator="Ferjart",      rarity="Rare"),
-        Category(id=17, name="Samuroid",    creator="TR",           rarity="Rare"),
-        Category(id=18, name="SwampBot",    creator="Sander",       rarity="Rare"),
-        Category(id=19, name="XR-800",      creator="TR",           rarity="Rare"),
-        Category(id=20, name="Mantis",      creator="Chabusan",     rarity="Epic"),
-        Category(id=21, name="Anubit",      creator="TR",           rarity="Epic"),
-        Category(id=22, name="Onibot",      creator="ArtTribe",     rarity="Epic"),
-        Category(id=23, name="SefreePoh",   creator="TR",           rarity="Epic"),
-        Category(id=24, name="AlienBot",    creator="Chabusan",     rarity="Legendary"),
-        Category(id=25, name="GodBot",      creator="Chabusan",     rarity="Legendary"),
-        Category(id=26, name="Junkyard King",creator="MisterXCV",   rarity="Legendary"),
+        Category(id=0,  name="AyshaBot",    creator="ayshaarts",      rarity="Common"),
+        Category(id=1,  name="Humunculus",  creator="SanderJansenArt",rarity="Common"),
+        Category(id=2,  name="XR-I",        creator="PatrichPng",     rarity="Common"),
+        Category(id=3,  name="TribeBot",    creator="afkartribe",     rarity="Common"),
+        Category(id=4,  name="Goblin",      creator="PatrichPng",     rarity="Common"),
+        Category(id=5,  name="SmileBot",    creator="SanderJansenArt",rarity="Common"),
+        Category(id=6,  name="Golem",       creator="PatrichPng",     rarity="Common"),
+        Category(id=7,  name="RavenBot",    creator="Ferj_art",       rarity="Common"),
+        Category(id=8,  name="ArtBot",      creator="ayshaarts",      rarity="Uncommon"),
+        Category(id=9,  name="XR-II",       creator="PatrichPng",     rarity="Uncommon"),
+        Category(id=10, name="DemonBot",    creator="SanderJansenArt",rarity="Uncommon"),
+        Category(id=11, name="PunkBot",     creator="chuba__san",     rarity="Uncommon"),
+        Category(id=12, name="BugBot",      creator="afkartribe",     rarity="Uncommon"),
+        Category(id=13, name="Cyclops",     creator="PatrichPng",     rarity="Uncommon"),
+        Category(id=14, name="Etherbot",    creator="Ferj_art",       rarity="Uncommon"),
+        Category(id=15, name="Scuboid",     creator="ayshaarts",      rarity="Rare"),
+        Category(id=16, name="Weeabot",     creator="Ferj_art",       rarity="Rare"),
+        Category(id=17, name="Samuroid",    creator="PatrichPng",     rarity="Rare"),
+        Category(id=18, name="SwampBot",    creator="SanderJansenArt",rarity="Rare"),
+        Category(id=19, name="XR-800",      creator="PatrichPng",     rarity="Rare"),
+        Category(id=20, name="XR-Ultra",    creator="PatrichPng",     rarity="Rare"),
+        Category(id=21, name="Mantis",      creator="chuba__san",     rarity="Epic"),
+        Category(id=22, name="Anubit",      creator="PatrichPng",     rarity="Epic"),
+        Category(id=23, name="Onibot",      creator="afkartribe",     rarity="Epic"),
+        Category(id=24, name="SefreePoh",   creator="PatrichPng",     rarity="Epic"),
+        Category(id=25, name="AlienBot",    creator="chuba__san",     rarity="Epic"),
+        Category(id=26, name="GodBot",      creator="chuba__san",     rarity="Legendary"),
+        Category(id=27, name="Junkyard King",creator="MisterXcv",     rarity="Legendary"),
+        Category(id=28, name="XR-Infity",   creator="PatrichPng",     rarity="Legendary"),
+        Category(id=29, name="Secret",      creator="CobbleDev",      rarity="Mythic"),
         
         
         
@@ -343,54 +346,75 @@ def resetDB():
         Bit(part=4, category_id=19, name="XR-800 Left Leg",coordinate="[550,75]", image_file="bit-images/xr800/l_leg.png"),
         Bit(part=5, category_id=19, name="XR-800 Right Leg",coordinate="[400,75]", image_file="bit-images/xr800/r_leg.png"),
 
-        Bit(part=0, category_id=20, name="Mantis Head",    coordinate="[325,430]", image_file="bit-images/mantis/head.png"),
-        Bit(part=1, category_id=20, name="Mantis Body",    coordinate="[[765,30],[290,290],[1200,290],[580,1130],[920,1120], True]", image_file="bit-images/mantis/body.png"),
-        Bit(part=2, category_id=20, name="Mantis Left Arm",coordinate="[580,60]", image_file="bit-images/mantis/l_arm.png"),
-        Bit(part=3, category_id=20, name="Mantis Right Arm",coordinate="[80,40]", image_file="bit-images/mantis/r_arm.png"),
-        Bit(part=4, category_id=20, name="Mantis Left Leg",coordinate="[280,90]", image_file="bit-images/mantis/l_leg.png"),
-        Bit(part=5, category_id=20, name="Mantis Right Leg",coordinate="[170,80]", image_file="bit-images/mantis/r_leg.png"),
+        Bit(part=0, category_id=20, name="XR-Ultra Head",    coordinate="[350,560]", image_file="bit-images/xrultra/head.png"),
+        Bit(part=1, category_id=20, name="XR-Ultra Body",    coordinate="[[500,120],[180,400],[830,400],[350,1100],[660,1100], True]", image_file="bit-images/xrultra/body.png"),
+        Bit(part=2, category_id=20, name="XR-Ultra Left Arm",coordinate="[490,590]", image_file="bit-images/xrultra/l_arm.png"),
+        Bit(part=3, category_id=20, name="XR-Ultra Right Arm",coordinate="[150,590]", image_file="bit-images/xrultra/r_arm.png"),
+        Bit(part=4, category_id=20, name="XR-Ultra Left Leg",coordinate="[620,75]", image_file="bit-images/xrultra/l_leg.png"),
+        Bit(part=5, category_id=20, name="XR-Ultra Right Leg",coordinate="[280,75]", image_file="bit-images/xrultra/r_leg.png"),
 
-        Bit(part=0, category_id=21, name="Anubit Head",    coordinate="[350,620]", image_file="bit-images/xr6/head.png"),
-        Bit(part=1, category_id=21, name="Anubit Body",    coordinate="[[500,80],[90,240],[910,240],[330,1150],[670,1150], True]", image_file="bit-images/xr6/body.png"),
-        Bit(part=2, category_id=21, name="Anubit Left Arm",coordinate="[500,380]", image_file="bit-images/xr6/l_arm.png"),
-        Bit(part=3, category_id=21, name="Anubit Right Arm",coordinate="[240,380]", image_file="bit-images/xr6/r_arm.png"),
-        Bit(part=4, category_id=21, name="Anubit Left Leg",coordinate="[640,100]", image_file="bit-images/xr6/l_leg.png"),
-        Bit(part=5, category_id=21, name="Anubit Right Leg",coordinate="[230,100]", image_file="bit-images/xr6/r_leg.png"),
+        Bit(part=0, category_id=21, name="Mantis Head",    coordinate="[325,430]", image_file="bit-images/mantis/head.png"),
+        Bit(part=1, category_id=21, name="Mantis Body",    coordinate="[[765,30],[290,290],[1200,290],[580,1130],[920,1120], True]", image_file="bit-images/mantis/body.png"),
+        Bit(part=2, category_id=21, name="Mantis Left Arm",coordinate="[580,60]", image_file="bit-images/mantis/l_arm.png"),
+        Bit(part=3, category_id=21, name="Mantis Right Arm",coordinate="[80,40]", image_file="bit-images/mantis/r_arm.png"),
+        Bit(part=4, category_id=21, name="Mantis Left Leg",coordinate="[280,90]", image_file="bit-images/mantis/l_leg.png"),
+        Bit(part=5, category_id=21, name="Mantis Right Leg",coordinate="[170,80]", image_file="bit-images/mantis/r_leg.png"),
 
-        Bit(part=0, category_id=22, name="Onibot Head",    coordinate="[520,550]", image_file="bit-images/tribe2/head.png"),
-        Bit(part=1, category_id=22, name="Onibot Body",    coordinate="[[800,30],[176,385],[1436,380],[592,1080],[1040,1080], True]", image_file="bit-images/tribe2/body.png"),
-        Bit(part=2, category_id=22, name="Onibot Left Arm",coordinate="[320,190]", image_file="bit-images/tribe2/l_arm.png"),
-        Bit(part=3, category_id=22, name="Onibot Right Arm",coordinate="[115,190]", image_file="bit-images/tribe2/r_arm.png"),
-        Bit(part=4, category_id=22, name="Onibot Left Leg",coordinate="[235,115]", image_file="bit-images/tribe2/l_leg.png"),
-        Bit(part=5, category_id=22, name="Onibot Right Leg",coordinate="[220,115]", image_file="bit-images/tribe2/r_leg.png"),
+        Bit(part=0, category_id=22, name="Anubit Head",    coordinate="[350,620]", image_file="bit-images/xr6/head.png"),
+        Bit(part=1, category_id=22, name="Anubit Body",    coordinate="[[500,80],[90,240],[910,240],[330,1150],[670,1150], True]", image_file="bit-images/xr6/body.png"),
+        Bit(part=2, category_id=22, name="Anubit Left Arm",coordinate="[500,380]", image_file="bit-images/xr6/l_arm.png"),
+        Bit(part=3, category_id=22, name="Anubit Right Arm",coordinate="[240,380]", image_file="bit-images/xr6/r_arm.png"),
+        Bit(part=4, category_id=22, name="Anubit Left Leg",coordinate="[640,100]", image_file="bit-images/xr6/l_leg.png"),
+        Bit(part=5, category_id=22, name="Anubit Right Leg",coordinate="[230,100]", image_file="bit-images/xr6/r_leg.png"),
 
-        Bit(part=0, category_id=23, name="SefreePoh Head",    coordinate="[350,590]", image_file="bit-images/droid/head.png"),
-        Bit(part=1, category_id=23, name="SefreePoh Body",    coordinate="[[510,120],[160,300],[860,300],[340,1170],[700,1170], True]", image_file="bit-images/droid/body.png"),
-        Bit(part=2, category_id=23, name="SefreePoh Left Arm",coordinate="[510,450]", image_file="bit-images/droid/l_arm.png"),
-        Bit(part=3, category_id=23, name="SefreePoh Right Arm",coordinate="[210,450]", image_file="bit-images/droid/r_arm.png"),
-        Bit(part=4, category_id=23, name="SefreePoh Left Leg",coordinate="[560,130]", image_file="bit-images/droid/l_leg.png"),
-        Bit(part=5, category_id=23, name="SefreePoh Right Leg",coordinate="[340,130]", image_file="bit-images/droid/r_leg.png"),
+        Bit(part=0, category_id=23, name="Onibot Head",    coordinate="[520,550]", image_file="bit-images/tribe2/head.png"),
+        Bit(part=1, category_id=23, name="Onibot Body",    coordinate="[[800,30],[176,385],[1436,380],[592,1080],[1040,1080], True]", image_file="bit-images/tribe2/body.png"),
+        Bit(part=2, category_id=23, name="Onibot Left Arm",coordinate="[320,190]", image_file="bit-images/tribe2/l_arm.png"),
+        Bit(part=3, category_id=23, name="Onibot Right Arm",coordinate="[115,190]", image_file="bit-images/tribe2/r_arm.png"),
+        Bit(part=4, category_id=23, name="Onibot Left Leg",coordinate="[235,115]", image_file="bit-images/tribe2/l_leg.png"),
+        Bit(part=5, category_id=23, name="Onibot Right Leg",coordinate="[220,115]", image_file="bit-images/tribe2/r_leg.png"),
 
-        Bit(part=0, category_id=24, name="Alienbot Head",    coordinate="[500,560]", image_file="bit-images/alienbot/head.png"),
-        Bit(part=1, category_id=24, name="Alienbot Body",    coordinate="[[560,20],[190,285],[940,285],[420,1040],[660,1040], True]", image_file="bit-images/alienbot/body.png"),
-        Bit(part=2, category_id=24, name="Alienbot Left Arm",coordinate="[420,120]", image_file="bit-images/alienbot/l_arm.png"),
-        Bit(part=3, category_id=24, name="Alienbot Right Arm",coordinate="[110,210]", image_file="bit-images/alienbot/r_arm.png"),
-        Bit(part=4, category_id=24, name="Alienbot Left Leg",coordinate="[230,130]", image_file="bit-images/alienbot/l_leg.png"),
-        Bit(part=5, category_id=24, name="Alienbot Right Leg",coordinate="[60,220]", image_file="bit-images/alienbot/r_leg.png"),
+        Bit(part=0, category_id=24, name="SefreePoh Head",    coordinate="[350,590]", image_file="bit-images/droid/head.png"),
+        Bit(part=1, category_id=24, name="SefreePoh Body",    coordinate="[[510,120],[160,300],[860,300],[340,1170],[700,1170], True]", image_file="bit-images/droid/body.png"),
+        Bit(part=2, category_id=24, name="SefreePoh Left Arm",coordinate="[510,450]", image_file="bit-images/droid/l_arm.png"),
+        Bit(part=3, category_id=24, name="SefreePoh Right Arm",coordinate="[210,450]", image_file="bit-images/droid/r_arm.png"),
+        Bit(part=4, category_id=24, name="SefreePoh Left Leg",coordinate="[560,130]", image_file="bit-images/droid/l_leg.png"),
+        Bit(part=5, category_id=24, name="SefreePoh Right Leg",coordinate="[340,130]", image_file="bit-images/droid/r_leg.png"),
 
-        Bit(part=0, category_id=25, name="Godbot Head",    coordinate="[200,440]", image_file="bit-images/godbot/head.png"),
-        Bit(part=1, category_id=25, name="Godbot Body",    coordinate="[[710,80],[230,450],[1180,450],[520,1130],[820,1130], False]", image_file="bit-images/godbot/body.png"),
-        Bit(part=2, category_id=25, name="Godbot Left Arm",coordinate="[480,150]", image_file="bit-images/godbot/l_arm.png"),
-        Bit(part=3, category_id=25, name="Godbot Right Arm",coordinate="[50,70]", image_file="bit-images/godbot/r_arm.png"),
-        Bit(part=4, category_id=25, name="Godbot Left Leg",coordinate="[270,50]", image_file="bit-images/godbot/l_leg.png"),
-        Bit(part=5, category_id=25, name="Godbot Right Leg",coordinate="[140,60]", image_file="bit-images/godbot/r_leg.png"),
+        Bit(part=0, category_id=25, name="Alienbot Head",    coordinate="[500,560]", image_file="bit-images/alienbot/head.png"),
+        Bit(part=1, category_id=25, name="Alienbot Body",    coordinate="[[560,20],[190,285],[940,285],[420,1040],[660,1040], True]", image_file="bit-images/alienbot/body.png"),
+        Bit(part=2, category_id=25, name="Alienbot Left Arm",coordinate="[420,120]", image_file="bit-images/alienbot/l_arm.png"),
+        Bit(part=3, category_id=25, name="Alienbot Right Arm",coordinate="[110,210]", image_file="bit-images/alienbot/r_arm.png"),
+        Bit(part=4, category_id=25, name="Alienbot Left Leg",coordinate="[230,130]", image_file="bit-images/alienbot/l_leg.png"),
+        Bit(part=5, category_id=25, name="Alienbot Right Leg",coordinate="[60,220]", image_file="bit-images/alienbot/r_leg.png"),
 
-        Bit(part=0, category_id=26, name="Kings Head",    coordinate="[260,475]", image_file="bit-images/king/head.png"),
-        Bit(part=1, category_id=26, name="Kings Body",    coordinate="[[535,210],[170,470],[930,470],[410,1125],[650,1125], True]", image_file="bit-images/king/body.png"),
-        Bit(part=2, category_id=26, name="Kings Left Arm",coordinate="[200,60]", image_file="bit-images/king/l_arm.png"),
-        Bit(part=3, category_id=26, name="Kings Right Arm",coordinate="[40,40]", image_file="bit-images/king/r_arm.png"),
-        Bit(part=4, category_id=26, name="Kings Left Leg",coordinate="[250,90]", image_file="bit-images/king/l_leg.png"),
-        Bit(part=5, category_id=26, name="Kings Right Leg",coordinate="[75,95]", image_file="bit-images/king/r_leg.png"),
+        Bit(part=0, category_id=26, name="Godbot Head",    coordinate="[200,440]", image_file="bit-images/godbot/head.png"),
+        Bit(part=1, category_id=26, name="Godbot Body",    coordinate="[[710,80],[230,450],[1180,450],[520,1130],[820,1130], False]", image_file="bit-images/godbot/body.png"),
+        Bit(part=2, category_id=26, name="Godbot Left Arm",coordinate="[480,150]", image_file="bit-images/godbot/l_arm.png"),
+        Bit(part=3, category_id=26, name="Godbot Right Arm",coordinate="[50,70]", image_file="bit-images/godbot/r_arm.png"),
+        Bit(part=4, category_id=26, name="Godbot Left Leg",coordinate="[270,50]", image_file="bit-images/godbot/l_leg.png"),
+        Bit(part=5, category_id=26, name="Godbot Right Leg",coordinate="[140,60]", image_file="bit-images/godbot/r_leg.png"),
+
+        Bit(part=0, category_id=27, name="Kings Head",    coordinate="[260,475]", image_file="bit-images/king/head.png"),
+        Bit(part=1, category_id=27, name="Kings Body",    coordinate="[[535,210],[170,470],[930,470],[410,1125],[650,1125], True]", image_file="bit-images/king/body.png"),
+        Bit(part=2, category_id=27, name="Kings Left Arm",coordinate="[200,60]", image_file="bit-images/king/l_arm.png"),
+        Bit(part=3, category_id=27, name="Kings Right Arm",coordinate="[40,40]", image_file="bit-images/king/r_arm.png"),
+        Bit(part=4, category_id=27, name="Kings Left Leg",coordinate="[250,90]", image_file="bit-images/king/l_leg.png"),
+        Bit(part=5, category_id=27, name="Kings Right Leg",coordinate="[75,95]", image_file="bit-images/king/r_leg.png"),
+
+        Bit(part=0, category_id=28, name="Infinite Head",    coordinate="[380,630]", image_file="bit-images/xrinfinity/head.png"),
+        Bit(part=1, category_id=28, name="Infinite Body",    coordinate="[[500,260],[40,330],[920,330],[290,1280],[690,1280], True]", image_file="bit-images/xrinfinity/body.png"),
+        Bit(part=2, category_id=28, name="Infinite Left Arm",coordinate="[480,350]", image_file="bit-images/xrinfinity/l_arm.png"),
+        Bit(part=3, category_id=28, name="Infinite Right Arm",coordinate="[150,350]", image_file="bit-images/xrinfinity/r_arm.png"),
+        Bit(part=4, category_id=28, name="Infinite Left Leg",coordinate="[430,80]", image_file="bit-images/xrinfinity/l_leg.png"),
+        Bit(part=5, category_id=28, name="Infinite Right Leg",coordinate="[380,80]", image_file="bit-images/xrinfinity/r_leg.png"),
+
+        Bit(part=0, category_id=29, name="Secret Head",    coordinate="[350,550]", image_file="bit-images/placeholder/head.png"),
+        Bit(part=1, category_id=29, name="Secret Body",    coordinate="[[480,30],[90,190],[870,210],[270,1140],[700,1140], False]", image_file="bit-images/xr800placeholderbody.png"),
+        Bit(part=2, category_id=29, name="Secret Left Arm",coordinate="[490,305]", image_file="bit-images/placeholder/l_arm.png"),
+        Bit(part=3, category_id=29, name="Secret Right Arm",coordinate="[205,310]", image_file="bit-images/placeholder/r_arm.png"),
+        Bit(part=4, category_id=29, name="Secret Left Leg",coordinate="[550,75]", image_file="bit-images/placeholder/l_leg.png"),
+        Bit(part=5, category_id=29, name="Secret Right Leg",coordinate="[400,75]", image_file="bit-images/placeholder/r_leg.png"),
         
     ]
     db.session.bulk_save_objects(categories)
@@ -414,9 +438,12 @@ def add_bot(id, level, head_id, body_id, larm_id, rarm_id, lleg_id, rleg_id):
     right_leg = get_bit(5, rleg_id)
     create_pic(id, head, body, left_arm, right_arm, left_leg, right_leg)
     
-    new = Bot(id = id, level=level, head_id=head.id, body_id=body.id, right_arm_id=right_arm.id, left_arm_id=left_arm.id, left_leg_id=left_leg.id, right_leg_id=right_leg.id, image_file=str(id) + ".PNG")
-    db.session.add(new)
-    db.session.commit()
+    try:
+        new = Bot(id = id, level=level, head_id=head.id, body_id=body.id, right_arm_id=right_arm.id, left_arm_id=left_arm.id, left_leg_id=left_leg.id, right_leg_id=right_leg.id, image_file=str(id) + ".PNG")
+        db.session.add(new)
+        db.session.commit()
+    except:
+        print('Duplicate bot!')
     return new
     
 def create_pic(bot_id, head, body, left_arm, right_arm, left_leg, right_leg, debug=False):
@@ -466,7 +493,7 @@ def decide_points(type, c_id, body=False, points=[]):
     generatedImg.show()
 
 def generate_random(amount):
-    maxCat = 26+1
+    maxCat = 28+1
     for i in range(0, amount):
         head =      random.randrange(0, maxCat)
         body =      random.randrange(0, maxCat)
@@ -484,3 +511,7 @@ def get_bots():
 def get_bot(id):
     bot = Bot.query.filter(Bot.id == id).first()
     return bot
+
+def get_random():
+    amount = Bot.query.count()
+    return get_bot(random.randrange(1, amount+1))

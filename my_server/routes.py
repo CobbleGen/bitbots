@@ -7,8 +7,8 @@ import random
 @app.route('/')
 @app.route('/index')
 def start():
-    bot = dbhandler.get_bot(random.randrange(0, 100))
-    return render_template('index.html', bot=bot.serialize)
+    #bot = dbhandler.get_random()
+    return render_template('index.html') #,bot=bot.serialize)
 
 @app.route('/bots')
 def bots():
@@ -72,8 +72,8 @@ def metadata():
     return jsonify({
         "name": "BitBots",
         "description": "BitBots is a collection of robots that have been constructed by mismatched bits of other robots. Collect them and then combine two Bots with your favourite parts from each to make a new one!",
-        "image": "http://localhost:8070/static/bots-images/8.PNG",
-        "external_link": "http://localhost:8070/",
+        "image": "https://bitbots.app/static/bots-images/8.PNG",
+        "external_link": "https://bitbots.app/",
         "seller_fee_basis_points": 500, # Indicates a 5% seller fee.
         "fee_recipient": "0xE0666cAC0C2267209Ba3Da4Db00c03315Fe64fA8"
     })

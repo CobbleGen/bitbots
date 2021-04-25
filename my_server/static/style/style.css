@@ -734,6 +734,10 @@ section .container{
     justify-content: center;
 }
 
+.combining-container #preview-box {
+    min-width: 400px;
+}
+
 #preview-box .pre-box img {
     max-width: 100%;
     max-height: 98%;
@@ -828,6 +832,9 @@ h3{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     background-image: linear-gradient(135deg,#641d6d, #cf5359);
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .forge-button button:hover{
@@ -930,6 +937,83 @@ h3{
     border-bottom-left-radius: 0;
 }
 
+.dropbtn {
+    text-align: center;
+    background-color: white;
+    font-family: 'Poppins';
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: black;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    width: 400px;    
+    border-radius: 5px;
+  }
+  .db1{margin-right: 110px;}
+  .db2{margin-left: 110px;}
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 400px;
+    max-height: 800px;
+    overflow-y: scroll;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 12;
+    bottom: 95%;
+    border: double 4px transparent;
+    border-radius: 15px 15px 0 0px;
+    background-image: linear-gradient(135deg,#282021,#231b2e), radial-gradient(circle at top left, #641d6d, #cf5359);
+    background-origin: border-box;
+    border-bottom: 0;
+    background-clip: content-box, border-box;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: white;
+  }
+
+  .drop-element {
+      display: flex;
+      align-items: center;
+  }
+
+  .drop-element h2 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  .drop-element img {
+      width: 50px;
+      margin: 10px;
+  }
+  .drop-element:hover {
+      cursor: pointer;
+      background-color: rgba(128, 128, 128, 0.226);
+  }
+
+  .part:hover {
+      cursor: pointer;
+  }
+  .selected {
+      border-color: green!important;
+      border-width: 10px;
+  }
+  .not-selected {
+      border-color: red!important;
+      border-width: 10px;
+  }
+
 @media (max-width: 1550px) {
     .banner-overlay{
         top: -20%;
@@ -962,6 +1046,7 @@ h3{
 
     .container-bot-combine .container-card #preview-box {
         margin: 0;
+        min-width: 400px;
     }
 
     .container-bot-combine .container-card #preview-box div {

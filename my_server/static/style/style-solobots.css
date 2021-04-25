@@ -17,6 +17,9 @@
     transform: rotateY(180deg);
 }
   
+a {
+    color: pink;
+}
   
 .card__face {
     position: absolute;
